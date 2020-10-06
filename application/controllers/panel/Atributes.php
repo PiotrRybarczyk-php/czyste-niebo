@@ -52,10 +52,17 @@ class Atributes extends CI_Controller {
 					$this->base_m->create_column($table, $key);
 				}
 
+				if (!$this->db->field_exists('photo2', $table)) {
+					$this->base_m->create_column($table, 'photo2');
+				}
+
 				if($key == 'name_photo_1') {
 					if ($this->upload->do_upload('photo_1')) {
 						$data = $this->upload->data();
 						$insert['photo'] = $now.'/'.$data['file_name'];  
+						if($data['image_width'] > 1440) {
+							resizeImg($data['file_name'], $now, '1440');
+						} 
 						if ($data['file_type'] != 'image/svg' && isOnWebp()) {
 							convert__to__webp($insert['photo']); 
 						}

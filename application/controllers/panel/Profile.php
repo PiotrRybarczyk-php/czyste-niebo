@@ -20,7 +20,7 @@ class Profile extends CI_Controller {
 				mkdir('./uploads/' . $now, 0777, TRUE);
 			}
 			$config['upload_path'] = './uploads/'.$now;
-			$config['allowed_types'] = 'gif|jpg|png|jpeg';
+			$config['allowed_types'] = 'gif|jpg|png|jpeg|svg';
 			$config['max_size'] = 0;
 			$config['max_width'] = 0;
 			$config['max_height'] = 0;
@@ -31,7 +31,10 @@ class Profile extends CI_Controller {
 				if($key == 'name_photo_1') {
 					if ($this->upload->do_upload('photo_1')) {
 						$data = $this->upload->data();
-						$insert['avatar'] = $now.'/'.$data['file_name'];   
+						$insert['avatar'] = $now.'/'.$data['file_name'];
+						if($data['image_width'] > 1440) {
+							resizeImg($data['file_name'], $now, '1440');
+						}    
 						addMedia($data);
 					} elseif($value == 'usunięte') {
 						$insert['avatar'] = '';

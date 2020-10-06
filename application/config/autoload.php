@@ -7,7 +7,7 @@ $autoload['libraries'] = array('database','form_validation','ftp','upload','sess
 
 $autoload['drivers'] = array();
 
-$autoload['helper'] = array('url','file','form','html', 'views', 'session', 'login', 'media', 'variables', 'slug', 'default','webp', 'apigallery');
+$autoload['helper'] = array('url','file','form','html', 'views', 'session', 'login', 'media', 'variables', 'slug', 'default','webp', 'apigallery', 'photos');
 
 $autoload['config'] = array();
 

@@ -25,7 +25,7 @@
                 <?php $i=0; foreach (array_reverse($rows) as $value): $i++;  ?>
                 <tr>
                   <td class="align-middle"><?php echo $i; ?>.</td>
-                  <td class="align-middle"><?php if($value->name != ''){echo substr($value->name,0,40).'...';} else{echo substr($value->raw_name,0,40);} ?></td>
+                  <td class="align-middle"><?php echo substr($value->raw_name, 0, 70); if(strlen($value->raw_name) > 70) echo '...' ?></td>
                   <td class="text-right"><a class="btn btn-primary btn-sm" href="<?php echo base_url(); ?>uploads/<?php echo date('Y-m-d', strtotime($value->created)); ?>/<?php echo $value->name; ?>" target="_blank"><i class="fas fa-link mg-r-10"></i>Link</a>
                   <a href="<?php echo base_url(); ?>panel/settings/delete/<?php echo $this->uri->segment(2); ?>/<?php echo $value->id; ?>" class="btn btn-sm btn-secondary" 
                       onclick="return confirm('Czy na pewno chcesz usunąć <?php echo $value->raw_name; ?>? #<?php echo $value->id; ?>')" >

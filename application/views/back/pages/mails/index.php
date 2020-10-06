@@ -30,7 +30,7 @@
                       <img src="<?php echo base_url(); ?>assets/back/img/icons/cancel.png" class="wd-20 rounded-circle" alt="">
                       <?php endif; ?>
                     <?php echo $value->name; ?></td>
-                  <td class="align-middle"><?php echo $value->subject; ?></td>
+                  <td class="align-middle"><?php echo substr($value->subject, 0, 70); if(strlen($value->subject) > 70) echo '...' ?></td>
                   <td class="text-right">
                       <a href="<?php echo base_url(); ?>panel/<?php echo $this->uri->segment(2); ?>/show/<?php echo $value->id; ?>" class="btn btn-sm btn-info"><i class="icon fa fa-eye mg-r-10"></i> Podgląd</a>
                       <a href="<?php echo base_url(); ?>panel/settings/delete/<?php echo $this->uri->segment(2); ?>/<?php echo $value->id; ?>" class="btn btn-sm btn-secondary" 

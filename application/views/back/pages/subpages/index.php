@@ -25,8 +25,8 @@
                 <?php $i=0; foreach ($subpages as $value): $i++; ?>
                 <tr>
                   <td class="align-middle"><?php echo $i; ?>.</td>
-                  <td class="align-middle"><?php echo $value->page; ?></td>
-                  <td class="align-middle"><a href="<?= base_url().$value->page ?>" target="_blank" title="Zobacz"><?php echo $value->title; ?></a></td>
+                  <td class="align-middle"><?php echo substr($value->page, 0, 70); if(strlen($value->page) > 70) echo '...' ?></td>
+                  <td class="align-middle"><a href="<?= base_url().$value->page ?>" target="_blank" title="Zobacz"><?php echo substr($value->title, 0, 70); if(strlen($value->title) > 70) echo '...' ?></a></td>
                   <td class="text-right">
                       <a href="<?php echo base_url(); ?>panel/subpages/form/update/<?php echo $value->id; ?>" class="btn btn-sm btn-info"><i class="icon ion-compose mg-r-10"></i> Edytuj</a>
                       <!-- <a href="<?php echo base_url(); ?>panel/settings/delete/subpages/<?php echo $value->id; ?>" class="btn btn-sm btn-secondary" 
