@@ -55,18 +55,7 @@
   // Your custom settings go here
 });
   
-  function getPath(){
-    var location = window.location.href.split('/');
-    var url = '<?= base_url(); ?>'
-    url = url.split('/');
-    var path = '';
-    for(i=0 ; i<location.length ; i++){
-      if(location[i] != url[i]){
-        path += location[i]+'/';
-      }
-    }
-    return path;
-  }
+  
   window.addEventListener('load', function () {
     document.getElementById('photo_logo').addEventListener('change', function () {
       document.getElementById('photoViewer_logo').innerHTML = '<i class="fas fa-spinner fa-pulse loader"></i>';
