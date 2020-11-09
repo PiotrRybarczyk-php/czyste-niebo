@@ -112,14 +112,7 @@
   <script src="<?= base_url() ?>assets/front/lib/AlloyFinger/alloy_finger.min.js" type="text/javascript"></script>
   <script src="<?= base_url() ?>assets/front/js/lc_lightbox.lite.js" type="text/javascript"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.2/dist/lazyload.min.js"></script>
-  <script src="https://www.google.com/recaptcha/api.js?render=<?= $settings->captcha ?>"></script>
-  <script>
-  grecaptcha.ready(function() {
-      grecaptcha.execute('<?= $settings->captcha ?>', {action: 'homepage'}).then(function(token) {
-         
-      });
-  });
-  </script>
+
   <script>
     window.addEventListener("load", function(){
     window.cookieconsent.initialise({
@@ -211,19 +204,28 @@
   </script>
   <?php endif; ?>
   <?php if($this->uri->segment(1) == 'kontakt'): ?>
+    <script src="https://www.google.com/recaptcha/api.js?render=<?= $settings->captcha ?>" defer></script>
+    <script defer>
 
-  <script type="text/javascript">
     $('#contact-form').submit(function(event) {
         event.preventDefault();
         var email = $('#email').val();
 
-        grecaptcha.ready(function() {
-            grecaptcha.execute('<?= $settings->captcha ?>', {action: 'mailer/send'}).then(function(token) {
-                $('#contact-form').prepend('<input type="hidden" name="secret_key" value="<?= $settings->captcha_secret ?>">');
-                $('#contact-form').unbind('submit').submit();
-            });;
-        });
-    });
+               grecaptcha.execute('<?= $settings->captcha ?>', {action: 'mailer/send'}).then(function(token) {
+                   $('#contact-form').prepend('<input type="hidden" name="token" value="' + token + '">');
+                   $('#contact-form').prepend('<input type="hidden" name="secret_key" value="<?= $settings->captcha_secret ?>">');
+                   $('#contact-form').prepend('<input type="hidden" name="action" value="mailer/send">');
+                   $('#contact-form').unbind('submit').submit();
+               });;
+           });
+    </script>
+    <script type="text/javascript">
+      links = document.querySelectorAll("link");
+      for (var i = links.length - 1; i >= 0; i--) {
+          if (links[i].getAttribute('rel') == 'preload') {
+              links[i].setAttribute("rel", "stylesheet");
+          }
+      }
   </script>
   <?php endif; ?>
   

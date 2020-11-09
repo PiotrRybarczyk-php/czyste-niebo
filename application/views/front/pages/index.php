@@ -10,7 +10,7 @@
 
       	<?php $i=0; foreach ($slider as $key):?>
 	        <div class="carousel-item <?= ($i == 0 ? 'active' : '') ?>">
-	          <div class="view moving__photo" style="background-image: url('<?= images().'/'.$key->photo ?>'); background-repeat: no-repeat; background-size: cover;">
+	          <div class="view moving__photo" style="background-image: url('<?= images().'/'.$key->photo ?>.webp'); background-repeat: no-repeat; background-size: cover;">
 
 	            <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
 
@@ -55,7 +55,11 @@
 
             <div class="col-md-6 mb-4 d-flex align-items-center">
 
-              <img src="<?= images().$about->photo ?>" class="img-fluid w-100" alt="">
+			<picture>
+              <source srcset="<?= images().$about->photo ?>.webp" type="image/webp"  class="img-fluid w-100">
+              <source srcset="<?= images().$about->photo ?>" type="image/jpeg"  class="img-fluid w-100">
+              <img data-src="<?= images().$about->photo ?>" alt=""  class="lazy img-fluid w-100">
+            </picture>
 
             </div>
 
@@ -81,7 +85,7 @@
 
         <div class="container-fluid mt-5 px-0" style="overflow-x:hidden!important;overflow-y:hidden!important;">
 
-          <section class="text-center my-5 px-4 background-section background-section__index moving__photo" style="background-image: url('<?= images().$parallax->photo;  ?>');">
+          <section class="text-center my-5 px-4 background-section background-section__index moving__photo" style="background-image: url('<?= images().$parallax->photo;  ?>.webp');">
 
           	<h2 class="h1-responsive font-weight-bold my-5 white-text parralax__header"><?= $parallax->title; ?></h2>
 
