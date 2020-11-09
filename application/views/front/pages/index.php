@@ -147,8 +147,12 @@
 	        </div>
 
 
-	      </div>
-	      <img src="<?= images().$atributes[4]->photo ?>" class="img-fluid m-auto" style="width: 50%;">
+		  </div>
+		  <picture>
+              <source srcset="<?= images().$atributes[4]->photo ?>.webp" type="image/webp"  class="img-fluid m-auto" style="width: 50%;">
+              <source srcset="<?= images().$atributes[4]->photo ?>" type="image/jpeg"  class="img-fluid m-auto" style="width: 50%;">
+              <img data-src="<?= images().$atributes[4]->photo ?>" alt=""  class="img-fluid m-auto" style="width: 50%;">
+            </picture>
 	      <div class="container mb-5">
 	        <div class="row">
 	        	<?php if($atributes[4]->title): ?>
