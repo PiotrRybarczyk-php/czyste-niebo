@@ -110,6 +110,6 @@
         </div>
       </div>
     </div>
-    <div class="row" style="justify-content:center;"><img src="<?= base_url('uploads/2021-06-07/') . 'partners.jpg'; ?>"></div>
+    <div class="row contact-partners"><img src="<?= base_url('uploads/2021-06-07/') . 'partners.jpg'; ?>"></div>
   </div>
 </section>
