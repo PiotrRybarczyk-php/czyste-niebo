@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 $active_group = 'default';
 $query_builder = TRUE;
@@ -7,9 +7,9 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => '66062.m.tld.pl',
-	'username' => 'admin66062_template_2',
-	'password' => '0HzZ-zMcRj',
-	'database' => 'baza66062_template_2',
+	'username' => 'admin66062_czyste_cieplo',
+	'password' => '0Vsu5xm9k)',
+	'database' => 'baza66062_czyste_cieplo',
 	// 'hostname' => 'localhost',
 	// 'username' => 'root',
 	// 'password' => '',

@@ -3,25 +3,25 @@
     <h2 class="font-weight-bold text-center header__text"><?= $current_page->subtitle ?></h2>
     <div class="text-center w-responsive mx-auto pb-5"><?= $current_page->description ?></div>
     <div class="row">
-      <?php if($this->session->flashdata('success')):?>
-      <div class="col-md-12 mb-5">
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          <strong><?= $this->session->flashdata('success') ?></strong>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-          </button>
+      <?php if ($this->session->flashdata('success')) : ?>
+        <div class="col-md-12 mb-5">
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong><?= $this->session->flashdata('success') ?></strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
         </div>
-      </div>
       <?php endif; ?>
-      <?php if($this->session->flashdata('error')):?>
-      <div class="col-md-12 mb-5">
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-          <strong><?= $this->session->flashdata('error') ?></strong>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-          </button>
+      <?php if ($this->session->flashdata('error')) : ?>
+        <div class="col-md-12 mb-5">
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong><?= $this->session->flashdata('error') ?></strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
         </div>
-      </div>
       <?php endif; ?>
       <div class="col-lg-5 mb-lg-0 mb-4">
         <div class="card">
@@ -71,8 +71,7 @@
       </div>
       <div class="col-lg-7">
         <div id="map-container-section" class="z-depth-1-half map-container-section mb-4" style="height: 800px">
-          <iframe src="<?= $contact->map ?>" frameborder="0"
-          style="border:0" allowfullscreen></iframe>
+          <iframe src="<?= $contact->map ?>" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
         <div class="row text-center">
           <div class="col-md-4">
@@ -97,19 +96,20 @@
             <a href="mailto: <?= $contact->email1; ?>" class="btn-floating unique-color-dark">
               <i class="fas fa-envelope"></i>
             </a>
-            <?php if($contact->email1): ?>
-            <a class="text-dark" href="mailto: <?= $contact->email1; ?>">
-              <p><?= $contact->email1; ?></p>
-            </a>
+            <?php if ($contact->email1) : ?>
+              <a class="text-dark" href="mailto: <?= $contact->email1; ?>">
+                <p><?= $contact->email1; ?></p>
+              </a>
             <?php endif; ?>
-            <?php if($contact->email2): ?>
-            <a class="text-dark" href="mailto: <?= $contact->email2; ?>">
-              <p><?= $contact->email2; ?></p>
-            </a>
+            <?php if ($contact->email2) : ?>
+              <a class="text-dark" href="mailto: <?= $contact->email2; ?>">
+                <p><?= $contact->email2; ?></p>
+              </a>
             <?php endif; ?>
           </div>
         </div>
       </div>
     </div>
+    <div class="row" style="justify-content:center;"><img src="<?= base_url('uploads/2021-06-07/') . 'partners.jpg'; ?>"></div>
   </div>
 </section>
