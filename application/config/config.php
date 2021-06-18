@@ -3,7 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://{$_SERVER['HTTP_HOST']}/";
 
-$config['base_url'] = strpos($actual_link, 'localhost') > 0 ? $actual_link . '' : $actual_link . '';
+$config['base_url'] = strpos($actual_link, 'localhost') > 0 ? $actual_link . 'manticore' : $actual_link;
 
 $config['uri_protocol']    = 'REQUEST_URI';
 

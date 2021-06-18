@@ -1,8 +1,8 @@
 <body>
   <style type="text/css">
     .button-dark {
-      background-color: <?php echo $settings->first_color; ?> !important;
-      border: 1px solid <?php echo $settings->first_color; ?> !important;
+      background-color: #85b730 !important;
+      border: 1px solid #85b730 !important;
     }
 
     .button-dark:hover,

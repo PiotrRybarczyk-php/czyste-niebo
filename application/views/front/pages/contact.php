@@ -63,7 +63,7 @@
                 </label>
               </div>
               <div class="text-center">
-                <button class="btn unique-color-dark text-white">Wyślij</button>
+                <button class="btn button-dark text-white">Wyślij</button>
               </div>
             </form>
           </div>
