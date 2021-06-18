@@ -63,7 +63,7 @@
                 </label>
               </div>
               <div class="text-center">
-                <button class="btn button-dark text-white">Wyślij</button>
+                <button class="btn button_main btn-md my__btn__dark">Wyślij</button>
               </div>
             </form>
           </div>

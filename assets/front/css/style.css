@@ -1,8 +1,12 @@
-.button-dark {
+.button_main {
   background-color: #1c2331;
   color: #fff;
   border: 1px solid #1c2331;
   font-size: 1rem !important;
+}
+.button_main:hover {
+  background-color: #0093ff !important;
+  border-color: #0093ff !important;
 }
 
 strong {
@@ -176,9 +180,7 @@ html {
   font-weight: 600;
 }
 .btn__slider__hover:hover {
-  background: #fff !important;
-  border: 2px solid #1c2331 !important;
-  color: #1c2331 !important;
+  background: #85b730 !important;
 }
 .navbar {
   background-color: rgba(0, 0, 0, 0.2);

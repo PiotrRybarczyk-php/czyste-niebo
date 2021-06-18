@@ -1,11 +1,11 @@
 <body>
   <style type="text/css">
-    .button-dark {
+    .button_main {
       background-color: #85b730 !important;
       border: 1px solid #85b730 !important;
     }
 
-    .button-dark:hover,
+    .button_main:hover,
     .colorTemplate2,
       {
       color: <?php echo $settings->first_color; ?> !important;
@@ -28,12 +28,6 @@
     .list-group-item.active {
       background-color: <?php echo $settings->first_color; ?> !important;
       border-color: <?php echo $settings->first_color; ?> !important;
-    }
-
-    .btn__slider__hover:hover {
-      background: white !important;
-      border: 2px solid white !important;
-      color: <?php echo $settings->first_color; ?> !important;
     }
 
     .top-nav-collapse {
@@ -67,7 +61,7 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-        <ul class="navbar-nav mr-auto">
+        <ul class="navbar-nav mx-auto">
           <?php foreach ($subpages as $key) : $current = $key->page; ?>
             <li class="nav-item <?= ($this->uri->segment(1) == $current ? 'active' : ' '); ?>">
               <a class="nav-link" href="<?= base_url(); ?><?= $key->page; ?>"><?= $key->title; ?>
