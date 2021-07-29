@@ -8,7 +8,7 @@
           <a href="<?= base_url(); ?>wpis/<?= $key->id . '/' . slug($key->title); ?>">
             <div class="view overlay rounded z-depth-2 mb-lg-0 mb-4">
               <picture class="">
-                <source data-srcset="<?= base_url() . 'uploads/' . $key->photo ?>.webp" type="image/webp" class="card-img-top">
+                <source data-srcset="<?= base_url() . 'uploads/' . $key->photo ?>" type="image/webp" class="card-img-top">
                 <source data-srcset="<?= base_url() . 'uploads/' . $key->photo ?>" type="image/jpeg" class="card-img-top">
                 <img data-src="<?= base_url() . 'uploads/' . $key->photo ?>" alt="<?= $key->alt ?>" class="card-img-top h-100 lazy ">
               </picture>
